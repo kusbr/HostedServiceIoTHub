@@ -1,5 +1,5 @@
 # HostedServiceIoTHub
-Web API with a  background hosted service that will maintain device clients to Azure IoT HuB. Useful in high scale (high rate and low latency) cloud gateway scenarios and deployed as a container. To use your configuration file for the device conection strings, mount your appsettings.json to the /app/appsettings.json file in the container.
+Web API with a  background hosted service that will maintain device clients to Azure IoT HuB. Useful as a REST API to receive high scale (high rate and low latency) http messages from devices/ gateways to be sent toAzure IoT Hub. The API will maintain a MQTT connection per device and send the device messages on that channel to Azure IoTHub. The http message needs to include  the device id in the header and the payload in the body. The API can be deployed as a Docker contaner also. To use your configuration file for the device conection strings, mount your appsettings.json to the /app/appsettings.json file in the container.
 
 Load Test Observations:
 
